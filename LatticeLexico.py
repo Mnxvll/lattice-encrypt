@@ -77,6 +77,11 @@ class Lexico:
                 while i < n and texto[i].isalpha():
                     i += 1
                 palabra = texto[inicio:i]  
+                
+                # Validacion estricta de mayusculas
+                if not palabra.isupper():
+                    raise SyntaxError(f"Error Léxico: La palabra '{palabra}' no es válida. Todas las instrucciones deben estar en MAYÚSCULAS.")
+                    
                 tokens.append(Token("PALABRA", palabra))
                 continue
                 

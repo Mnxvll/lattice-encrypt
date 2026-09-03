@@ -23,7 +23,7 @@ El proyecto utiliza un patron de despacho dinamico a traves de `reglas.json` par
 2. **Crear una rama aislada**: Crear una rama descriptiva para la tarea a realizar.
    * `git checkout -b feature/nombre-de-categoria`
 3. **Identificar la función**: Revisar el archivo `reglas.json` para ver qué nombre de método  tocó implementar (ej. `revisarSintaxisRuido`). No es necesario modificar el JSON.
-4. **Desarrollar la lógica**: Escribir el método correspondiente en `LatticeSintactico.py` (ej. `revisarSintaxisRuido()`). Escribir el código de forma modular al final del archivo.
+4. **Desarrollar la lógica**: Abrir el archivo correspondiente a la categoría dentro de la carpeta `reglas/` (ej. `reglas/ReglasRuido.py`). Escribir la lógica matemática dentro de la función que ya está definida allí. **: No es necesario modificar `LatticeSintactico.py` ni `reglas.json`.**
 5. **Subir los cambios (Commit & Push)**: Guardar los cambios con mensajes descriptivos y súbirlos a la rama remota.
    * `git commit -m "feat: agrega operaciones de ruido"`
    * `git push origin feature/nombre-de-categoria`

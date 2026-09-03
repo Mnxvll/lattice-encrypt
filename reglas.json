@@ -1,22 +1,26 @@
 [
   {
     "_comentario": "Grupo 1: Operaciones Base. Contiene las operaciones fundamentales matematicas como suma (+), multiplicacion matriz-vector (*) y producto punto (.).",
-    "OperacionesBase": ["+", "*", "."],
+    "OperacionesBase": ["SUMA", "POR", "PUNTO"],
+    "Archivo": "ReglasBase",
     "EjecutarRegla": "revisarSintaxisBase"
   },
   {
     "_comentario": "Grupo 2: Operaciones de Ruido. Agrega ruido aleatorio a los vectores (RUIDO) y redondea flotantes a enteros (REDONDEAR) para poder descifrar.",
     "OperacionesRuido": ["RUIDO", "REDONDEAR"],
+    "Archivo": "ReglasRuido",
     "EjecutarRegla": "revisarSintaxisRuido"
   },
   {
     "_comentario": "Grupo 3: Operaciones de Texto. Permite convertir cadenas de texto a vectores ASCII (TEXTO) y revertirlos a cadenas legibles (CARACTERES).",
     "OperacionesTexto": ["TEXTO", "CARACTERES"],
+    "Archivo": "ReglasTexto",
     "EjecutarRegla": "revisarSintaxisTexto"
   },
   {
     "_comentario": "Grupo 4: Comandos Maestros Lattice. Comandos de alto nivel para generar matrices/vectores clave (KEYGEN), cifrar mensajes (CIFRAR) y descifrar (DESCIFRAR).",
     "OperacionesLattice": ["KEYGEN", "CIFRAR", "DESCIFRAR"],
+    "Archivo": "ReglasLattice",
     "EjecutarRegla": "revisarSintaxisLattice"
   }
 ]

@@ -1,15 +1,31 @@
+"""Main entry point for testing the lexer and parser."""
 from LatticeLexico import Lexico
 from LatticeSintactico import Sintactico
 
-texto = "VECTOR(1,2) SUMA VECTOR(3,4)"
+print("=== Intérprete Lattice Encrypt ===")
+print("Escribe un comando o 'salir' para terminar).")
+print("Ejemplos:")
+print("  VECTOR(1,2) SUMA VECTOR(3,4)")
+print("  MATRIZ(2,0,0,2) POR VECTOR(3,4)")
+print("  VECTOR(1,2) PUNTO VECTOR(3,4)")
 
-tokens = Lexico().tokenizar(texto) 
+while True:
+    try:
+        texto = input("\n>> ")
+        if texto.strip().lower() == "salir":
+            break
+        if not texto.strip():
+            continue
 
-print(tokens)
+        analizadorLexico = Lexico()
+        tokens = analizadorLexico.tokenizar(texto)
+        
+        analizadorSintactico = Sintactico(tokens)
+        resultado = analizadorSintactico.analisisSintactico()
 
-analizadorSintactico = Sintactico(tokens)
+        print(f"\n[LÉXICO] Tokens generados: {tokens}\n")   
 
-resultado = analizadorSintactico.analisisSintactico()
+        print(f"Resultado: {resultado}")
 
-print(resultado)
-
+    except Exception as e:
+        print(f"Error: {e}")
