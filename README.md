@@ -15,8 +15,16 @@ El proyecto se divide en los siguientes modulos principales:
 
 ## Metodologia de Trabajo en Equipo
 
-El proyecto utiliza un patron de despacho dinamico a traves de `reglas.json` para facilitar la extension del lenguaje. El flujo de trabajo consiste en:
-1. Crear una nueva rama para implementar una categoria de operaciones.
-2. Definir la regla en `reglas.json` asignando un metodo de ejecucion.
-3. Desarrollar el metodo correspondiente en `LatticeSintactico.py`.
-4. Realizar un Pull Request hacia la rama principal (main).
+El proyecto utiliza un patron de despacho dinamico a traves de `reglas.json` para facilitar la extension del lenguaje sin causar conflictos. Cada miembro del equipo debe seguir estrictamente este flujo de trabajo (GitHub Flow):
+
+1. **Sincronizar código local**: Antes de empezar a programar, asegúrarse de tener la última versión del código base.
+   * `git checkout main`
+   * `git pull origin main`
+2. **Crear una rama aislada**: Crear una rama descriptiva para la tarea a realizar.
+   * `git checkout -b feature/nombre-de-categoria`
+3. **Identificar la función**: Revisar el archivo `reglas.json` para ver qué nombre de método  tocó implementar (ej. `revisarSintaxisRuido`). No es necesario modificar el JSON.
+4. **Desarrollar la lógica**: Escribir el método correspondiente en `LatticeSintactico.py` (ej. `revisarSintaxisRuido()`). Escribir el código de forma modular al final del archivo.
+5. **Subir los cambios (Commit & Push)**: Guardar los cambios con mensajes descriptivos y súbirlos a la rama remota.
+   * `git commit -m "feat: agrega operaciones de ruido"`
+   * `git push origin feature/nombre-de-categoria`
+6. **Pull Request (PR)**: Ir a GitHub y abrir un Pull Request hacia `main`. Solicitar la revisión de al menos un compañero  antes de fusionar el código.
