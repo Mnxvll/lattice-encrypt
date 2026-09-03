@@ -1,7 +1,7 @@
 import re
 from Token import Token
 
-class LatticeLexer:
+class Lexico:
     def __init__(self):
         # Diccionario de símbolos matemáticos y puntuación
         self.simbolos = {
@@ -64,17 +64,14 @@ class LatticeLexer:
                 i += 1
                 continue
 
-            # Leer Letras (Palabras Reservadas o variables)
+            # Leer Letras (Palabras Reservadas)
             if char.isalpha():
                 inicio = i
+                # avanza mientras encuentra letras
                 while i < n and texto[i].isalpha():
                     i += 1
-                palabra = texto[inicio:i]
-                
-                if palabra in self.palabras_reservadas:
-                    tokens.append(Token(self.palabras_reservadas[palabra], palabra))
-                else:
-                    tokens.append(Token("IDENTIFICADOR", palabra))
+                palabra = texto[inicio:i]  
+                tokens.append(Token("PALABRA", palabra))
                 continue
                 
             # Leer números enteros y decimales    
@@ -96,29 +93,3 @@ class LatticeLexer:
             
         return tokens
 
-if __name__ == "__main__":
-    print(" Analizador Léxico Lattice ")
-    lexer = LatticeLexer()
-    
-    while True:
-        try:
-            # Entrada por consola
-            codigo_prueba = input(">> ")
-            
-            if codigo_prueba.strip().lower() == "salir":
-                print("Saliendo del analizador...")
-                break
-            
-            if not codigo_prueba.strip():
-                continue
-                
-            # Tokenizar e imprimir
-            mis_tokens = lexer.tokenizar(codigo_prueba)
-            
-            for t in mis_tokens:
-                print(t)
-                
-        except SyntaxError as e:
-            print(f"❌ {e}")
-        except Exception as e:
-            print(f"❌ Error inesperado: {e}")
