@@ -27,20 +27,22 @@ graph TD
     end
 
     %% Relaciones
-    U -- "1. Escribe Comando" --> R
-    R -- "2. Texto" --> L
-    L -- "3. Tokens" --> R
-    R -- "4. Envía Tokens" --> S
+    U -->|1. Escribe Comando| R
+    R -->|2. Texto| L
+    L --->|3. Tokens| R
     
-    S -- "5. Lee Configuración" --> J
-    J -. "Indica archivo a importar" .-> S
+    %% Alargamos esta flecha para que la curva sea diferente y no choque
+    R ---->|4. Envía Tokens| S
+    
+    S -->|5. Lee Configuración| J
+    J -.->|Indica archivo a importar| S
 
-    S -- "6. Importa y Ejecuta" --> RB
-    S -- "6. Importa y Ejecuta" --> RR
-    S -- "6. Importa y Ejecuta" --> RT
-    S -- "6. Importa y Ejecuta" --> RL
+    S -->|6. Importa y Ejecuta| RB
+    S -->|6. Importa y Ejecuta| RR
+    S -->|6. Importa y Ejecuta| RT
+    S -->|6. Importa y Ejecuta| RL
 
-    RB -. "7. Retorna cálculo" .-> S
-    S -. "8. Resultado" .-> R
-    R -. "9. Imprime consola" .-> U
+    RB -.->|7. Retorna cálculo| S
+    S -.->|8. Resultado| R
+    R -.->|9. Imprime consola| U
 ```
