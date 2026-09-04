@@ -7,7 +7,7 @@ Este diagrama representa el autómata finito para reconocer palabras en el anali
 *   **Estado de Aceptación (`q1`)**: Representado con un doble círculo. Indica que la secuencia de caracteres leída hasta el momento forma una palabra válida.
 *   **Transiciones (flechas)**: Indican qué condición se debe cumplir (leer una letra) para pasar de un estado a otro.
 
-## Diagrama (Mermaid)
+## Diagrama 
 ```mermaid
 graph LR
     %% Estado inicial (flecha de entrada vacía)

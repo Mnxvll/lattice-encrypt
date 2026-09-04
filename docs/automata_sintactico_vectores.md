@@ -8,7 +8,7 @@ Este diagrama representa el autómata de validación gramatical (Sintáctico) pa
 *   **Estado de Aceptación (`q13`)**: (Doble círculo) Significa que toda la secuencia llegó exactamente en el orden esperado y la instrucción de suma de vectores es sintácticamente válida para ejecutarse.
 *   **Transiciones**: Los consumos esperados. Por ejemplo, `self.consumir("PALABRA")` o `self.consumir("IPAREN")`.
 
-## Diagrama (Mermaid)
+## Diagrama 
 ```mermaid
 graph TD
     %% Inicio
