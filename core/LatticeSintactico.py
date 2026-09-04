@@ -57,7 +57,7 @@ class Sintactico:
     # --- DESPACHADOR CENTRAL ---
     def analisisSintactico(self):
         # 1. Leer el archivo de reglas JSON
-        with open('reglas.json', 'r') as file:
+        with open('reglas/reglas.json', 'r') as file:
             reglas = json.load(file)
 
         # 2. Leer el primer operando (Lado Izquierdo)

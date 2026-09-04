@@ -1,5 +1,5 @@
 import re
-from Token import Token
+from core.Token import Token
 
 class Lexico:
     def __init__(self):

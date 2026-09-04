@@ -1,6 +1,5 @@
-"""Main entry point for testing the lexer and parser."""
-from LatticeLexico import Lexico
-from LatticeSintactico import Sintactico
+from core.LatticeLexico import Lexico
+from core.LatticeSintactico import Sintactico
 
 print("=== Intérprete Lattice Encrypt ===")
 print("Escribe un comando o 'salir' para terminar).")
